@@ -49,7 +49,7 @@ class DefollowCommand extends BaseCommand
 	
 	protected function fire(InputInterface $input, OutputInterface $output)
 	{
-		foreach (['username', 'time', 'num'] as $option) {
+		foreach (array('username', 'time', 'num') as $option) {
 			if (is_null($input->getOption($option))) {
 				throw new Exception("Missing argument: $option");
 			}
