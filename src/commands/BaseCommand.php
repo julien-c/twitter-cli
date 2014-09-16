@@ -14,7 +14,7 @@ class BaseCommand extends Command
 	{
 		$this->input = $input;
 		$this->output = $output;
-		$this->db = (new MongoClient)->{'twitter-cli'};
+		$this->db = with(new MongoClient)->{'twitter-cli'};
 		$this->fire($input, $output);
 	}
 	
