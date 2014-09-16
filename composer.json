@@ -1,0 +1,11 @@
+{
+    "require": {
+        "themattharris/tmhoauth": "*",
+        "symfony/console": "2.5",
+        "d11wtq/boris": "dev-master"
+    },
+    "autoload": {
+        "classmap": ["src"],
+        "files": ["bootstrap.php"]
+    }
+}
