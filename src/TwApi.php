@@ -31,7 +31,7 @@ class TwApi
 		$filename = sprintf(
 			'%s-%s-%s.json', 
 			date('Ymd-Gis'),
-			str_replace(['/', '.'], '-', Util::trimPrefix($url, '1.1/')),
+			str_replace(array('/', '.'), '-', Util::trimPrefix($url, '1.1/')),
 			md5($twResponse->requestHeader)
 		);
 		
