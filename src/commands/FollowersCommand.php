@@ -23,13 +23,13 @@ class FollowersCommand extends BaseCommand
 	{
 		$usernames = $input->getArgument('usernames');
 		$api = new Api;
-		$merged = array();
+		$merged = [];
 		
 		foreach ($usernames as $username) {
 			$followers = $api->followersIds($username);
 			dump('data/followers-'.$username.'.json', $followers);
 			foreach ($followers as $f) {
-				$merged[] = array($f, $username);
+				$merged[] = [$f, $username];
 			}
 		}
 		
