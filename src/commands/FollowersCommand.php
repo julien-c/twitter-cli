@@ -35,7 +35,7 @@ class FollowersCommand extends BaseCommand
 		
 		$tmpFilename = sprintf(
 			'merged-%s',
-			date('Ymd-Gis')
+			date('Ymd-His')
 		);
 		dump('data/'.$tmpFilename,  $merged);
 		$md5 = md5_file('data/'.$tmpFilename);
