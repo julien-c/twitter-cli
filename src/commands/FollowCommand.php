@@ -105,9 +105,9 @@ class FollowCommand extends BaseCommand
 				if ($input->getOption('force')) {
 					$response = $api->follow($userId);
 					$response = json_decode($response->response);
-					$this->line(sprintf("Followed $userId \tfrom $userSrc \t Username: ", $response->screen_name));
+					$this->line(sprintf("Followed $userId \tsrc: $userSrc \t Username: %s", $response->screen_name));
 				} else {
-					$this->line("Follow $userId \tfrom $userSrc");
+					$this->line("Follow $userId \tsrc: $userSrc");
 				}
 				// Store to archive
 				$follow = array(
