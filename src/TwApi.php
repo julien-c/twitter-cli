@@ -35,8 +35,8 @@ class TwApi
 			md5($twResponse->requestHeader)
 		);
 		
-		file_put_contents('logs/raw/' .$filename, json_encode($twResponse, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES));
-		file_put_contents('logs/data/'.$filename, json_encode(json_decode($twResponse->response), JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES));
+		dump('logs/raw/'.$filename, $twResponse);
+		dump('logs/data/'.$filename, json_decode($twResponse->response));
 		
 		return $twResponse;
 	}
