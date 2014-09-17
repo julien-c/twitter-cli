@@ -62,7 +62,7 @@ class FollowCommand extends BaseCommand
 	
 	protected function fire(InputInterface $input, OutputInterface $output)
 	{
-		foreach (array('username', 'file', 'num') as $option) {
+		foreach (['username', 'file', 'num'] as $option) {
 			if (is_null($input->getOption($option))) {
 				throw new Exception("Missing argument: $option");
 			}
