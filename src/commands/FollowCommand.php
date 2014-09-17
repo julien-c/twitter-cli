@@ -45,7 +45,7 @@ class FollowCommand extends BaseCommand
 		->limit(1)
 		->getNext();
 		
-		return ($state) ? (object) $state : (object) array('position' => 0);
+		return ($state) ? (object) $state : (object) ['position' => 0];
 	}
 	
 	public function saveState($username, $md5, $position)
