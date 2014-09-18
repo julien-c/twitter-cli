@@ -73,7 +73,7 @@ class FollowCommand extends BaseCommand
 		
 		
 		$api = new Api($username);
-		$md5 = md5_file($input->getOption('file'));
+		$md5 = md5_file(app_path($input->getOption('file')));
 		$toFollow = load($input->getOption('file'));
 		$num = (int) $input->getOption('num');
 		$state = $this->getState($username, $md5);

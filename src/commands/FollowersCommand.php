@@ -38,7 +38,7 @@ class FollowersCommand extends BaseCommand
 			date('Ymd-His')
 		);
 		dump('data/'.$tmpFilename,  $merged);
-		$md5 = md5_file('data/'.$tmpFilename);
+		$md5 = md5_file(app_path('data/'.$tmpFilename));
 		rename(
 			app_path('data/'.$tmpFilename),
 			app_path('data/'.$tmpFilename.'-'.$md5.'.json')
