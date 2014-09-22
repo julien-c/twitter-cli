@@ -17,6 +17,8 @@ class TestMongoCommand extends BaseCommand
 	
 	protected function fire(InputInterface $input, OutputInterface $output)
 	{
+		$this->line(ini_get('mongo.native_long'));
+		
 		$bigint = 2825725550;
 		
 		$this->db->test->remove();
@@ -26,12 +28,11 @@ class TestMongoCommand extends BaseCommand
 		));
 		
 		$doc = $this->db->test->findOne();
-		var_dump($doc);
 		if ($doc['int'] === $bigint) {
-			$this->info('Bigint saved as bigint');
+			$this->info('✔ Bigint saved as bigint');
 		}
 		else {
-			$this->error('Bigint NOT saved as bigint');
+			$this->error('✘ Bigint NOT saved as bigint');
 		}
 	}
 }
