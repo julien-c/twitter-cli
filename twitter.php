@@ -14,5 +14,7 @@ $application->add(new SyncCommand);
 $application->add(new FollowCommand);
 $application->add(new DefollowCommand);
 
+$application->add(new TestMongoCommand);
+
 $application->run();
 
