@@ -1,5 +1,8 @@
 <?php
 
+ini_set('mongo.native_long', 1);
+
+
 function app_path($path = '')
 {
 	return __DIR__.($path ? '/'.$path : $path);
