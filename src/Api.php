@@ -52,4 +52,18 @@ class Api extends TwApi
 			'user_id' => $id,
 		));
 	}
+	
+	
+	public function usersLookup(array $userIds)
+	{
+		$response = $this->request('GET', '1.1/users/lookup', array(
+			'user_id' => implode(',', $userIds),
+		));
+		if ($response->code == 200) {
+			return json_decode($response->response);
+		} else {
+			echo $response->response;
+			break;
+		}
+	}
 }

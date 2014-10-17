@@ -16,5 +16,7 @@ $application->add(new DefollowCommand);
 
 $application->add(new TestMongoCommand);
 
+$application->add(new Json\FollowersCommand);
+
 $application->run();
 
